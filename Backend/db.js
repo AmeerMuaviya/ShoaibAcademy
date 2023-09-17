@@ -1,20 +1,8 @@
 import mysql from "mysql";
 
 export const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database:'Shoaib Academy'
-  
+  host: process.env.HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database:proces.env.DB_URL
 });
-
-// import mysql from "mysql";
-
-// export const db = mysql.createConnection({
-//   host: "localhost",
-//   user: "techrayz_techrayz",
-//   password: "afqy+Vz9Rgor",
-//   database:'techrayz_shoaibacademy'
-  
-// });
-
