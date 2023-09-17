@@ -1,0 +1,419 @@
+@import url('../Css/StudentsSection.css');
+@import url('/src/App.css');
+#form-234 *{
+    margin: 23px;
+}
+th,td{
+    border: 1px solid black;
+}
+.td-tools div{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 3px;
+}
+#dt{
+    width: 100%;
+    padding: 4px;
+    border-radius: 10px;
+}
+label{
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+.tb-data{
+    color: green;
+    background-color: grey;
+}
+.obtainedMarks,.totalMarks{
+    background-color: var(--title-color);
+}
+input{
+    /* width: 100%; */
+    font-size:larger;
+    outline: none;
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid grey;
+    /* min-width: 250px;  */
+    /* TODO use class or die */
+}
+.schedule-input{
+    width: 300px;
+    border-radius: 10px;
+    padding: 4px;
+    font-size: 25px;
+}
+
+
+.sbj-btn{
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid darkturquoise;
+    display: inline-block;
+    cursor: pointer;
+}
+.unselected-sbj{
+    background: white;
+    border: 1px solid rgb(255, 145, 0);
+}
+.selected-sbj{
+    background-color: rgb(207, 244, 252);
+    color: rgb(1, 207, 253);
+    color: black;
+}
+.form-select{
+    min-width: 200px;
+}
+.table{
+    border: 3px solid double;
+}
+#welcome{
+    font-size: 300%;
+    font-family: 'Raleway', sans-serif;
+}
+
+#panlecContentN1{
+    width: 50%;
+    border-radius: 25px;
+    box-shadow: 0px 2px 8px 0px grey;
+    background: #83d4fd; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #bcaaff, #ddf1ff); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right,rgb(189, 233, 255)
+    , #ffd6f4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+#panlePictureBoxN1{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#teacherPngN1{
+    height: 60%;
+}
+.sidebarLogout{
+    margin-bottom: 20px;
+  }
+#inputInfo{
+    width: 50%;
+}
+#a:hover ~ #b {
+    background: #ccc
+}
+.dropdown-item:hover{
+    background-color: var(--title-color);
+}
+/* Login section */
+.loginform{
+    width: 50%;
+    border-radius: 25px;
+    box-shadow: 0px 2px 8px 0px grey;
+    background: #ffd6f4;
+    background: -webkit-linear-gradient(to right, #83d4fd, #83d4fd);
+    background: linear-gradient(to right,#ffd6f4
+    , #83d4fd); 
+    width: 50%;
+    
+}
+.edit-btn button{
+    margin: auto 12px;
+}
+.card-body strong span{
+    margin: 0 13px;
+    padding: 0px ;
+}
+.login-input-fields{
+    outline: none;
+    border-radius: 15px;
+    padding: 12px;
+    font-size: large;
+    margin-top: 23px;
+}
+.loginContainer{
+    align-items: center;
+    justify-content: space-between;
+    align-content: center;
+}
+.pictureSection{
+    width: 50%;
+}
+.loginform form {
+    width: 60%;
+}
+/* Login section Ends */
+
+
+/* Admin css Starts here */
+.stdform{
+    background-color: var(--title-color);
+    padding: 10px;
+    border-radius: 12px;
+}
+.dp{
+    cursor: pointer;
+    background-color: black;
+    border-radius: 100%;
+    overflow: hidden;
+    width: 250px;
+    height: 250px;
+    border: 2px solid white;
+}
+.form-floating label{
+    border: none;
+    color: black;
+}
+.form-floating{
+    display: block;
+    height: 40px;
+}
+#sp-btn{
+    display: block;
+    margin: 12px auto;
+    outline: none;
+    border: none;
+    background-color: #d5edf1;
+}
+#sp-btn:hover{
+    background-color: whitesmoke;
+}
+.stdform-item{
+    width: 500px;
+    margin: 12px auto;
+    border-radius: 12px;
+    padding: 5px;
+    outline: none;
+    font-size: 24px;
+}
+/* Admin css  Ends here */
+
+.address-textarea{
+    margin: 0px 2%;
+}
+/* Permote Section starts here */
+.permoteCheckboxes{
+    position: relative;
+    height: 20px;
+    top: 0;
+    margin: 1px 0;
+    left: 22rem;
+    width: 10%;
+    padding: 0;
+}
+.permotion-card{
+    overflow: hidden;
+}
+/* Permote Section ends here */
+.tDetails tbody tr td{
+    line-height: 1000%;
+    text-align: center;
+}
+.li .bi{
+    color: var(--title-color);
+  }
+ .li .bi:hover{
+    color: white;
+  }
+/* add Teacher */
+.buttn{
+    float: right;
+}
+/* add Teacher ends */
+.teacherProfilePicture{
+    width: 50px;
+    height: 50px;
+}
+.teacherTable input{
+        border-radius: 10px;
+        position: absolute;
+        outline: none;
+        right: 10px;
+        top: 6px;
+        padding: 3px;
+        font-size: x-large;
+        width: 25%;
+}
+.boxShadow{
+    box-shadow: 0px 2px 9px 0px grey;
+}
+.table{
+    margin-bottom: 0;
+}
+
+.actionButtons{
+    display: flex;
+    width: 50%;
+    flex-wrap: wrap ;
+    justify-content: space-around;
+}
+.actionButtons .edit-btn{
+    border: 1px solid var(--title-color);
+    color: var(--title-color);
+    padding: 7px 18px;
+    text-align: center;
+
+}
+.actionButtons .edit-btn:hover{
+    background-color: var(--title-color);
+    color: white;
+}
+.actionButtons .del-btn{
+    border: 1px solid red;
+    vertical-align: middle;
+    color: red;
+    padding: 2px 9px;
+}
+.actionButtons .warn-btn{
+    border: 1px solid rgb(255, 196, 4);
+    color: rgb(255, 196, 4);
+    padding: 2px 9px;
+}
+
+.actionButtons .del-btn:hover{
+    background-color: red;
+    color: white;
+    padding: 2px 9px;
+}
+.actionButtons .warn-btn:hover{
+
+    background-color: rgb(255, 196, 4);
+    color: white;
+    padding: 2px 9px;
+}
+.border-none{
+    border: none;
+}
+
+.no-border thead tr,tbody tr{
+    border: 1px solid rgb(192, 192, 192);
+}
+.removeBorder tr, td, th{
+    border: .4px solid rgb(186, 185, 185);
+    vertical-align: middle;
+}
+
+.address-textarea{
+    width: 100%;
+    margin: 0 2.4%;
+}
+
+@media only screen and (max-width: 1150px) {
+/* #panlePictureBoxN1{
+    display: none;
+} */
+.actionButtons{
+    width: 100%;
+}
+ #panlecContentN1{
+    width: 97%;
+    margin-top: 23px;
+ }
+}
+.loginContainer{
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.selectOption{
+    margin: 23px;
+    padding: 13px;
+}
+/* all Students */
+.searchBar{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    align-content: center;
+}
+.searchCenter{
+    width: 50%;
+}
+.wide-btn{
+    min-width: 100px;
+    display: inline;
+    vertical-align: middle;
+}
+
+#hide-btn{
+    display: inline-block;
+    width: 50px;
+    height: 40px;
+    padding: 7px;
+    text-align: center;
+}
+/* all students ends */
+@media only screen and (max-width: 800px) {
+ 
+    .stdform-item{
+        width: 300px;
+        margin: 12px auto;
+        border-radius: 12px;
+        padding: 5px;
+        outline: none;
+        font-size: 20px;
+    }
+    .address-textarea{
+        width: 300px;
+    }
+  .pictureSection{
+    display: none;
+  }  
+  .loginContainer{
+    justify-content: center;
+  }
+  .loginform  {
+    width: 100%;
+}
+.searchCenter{
+    width: 100%;
+}.permoteCheckboxes{
+    margin: 10px 0;
+}
+.teacherTable input{
+    position:inherit;
+    display: block;
+    margin: 15px auto;
+}
+
+}
+.profile-section{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.profile-section img{
+    width: 300px;
+    height: 300px;
+}
+
+
+
+@media only screen and (max-width: 550px) {
+    .logoutBtn{
+        display: none;
+      }
+    #panlecContentN1{
+        width: 100%;
+        border-radius: 10px;
+    } 
+    #inputInfo{
+        width: 100%;
+    }.permoteCheckboxes{
+       left: 40%;
+       }
+    .edit-btn{
+        position: inherit;
+        display: block;
+        margin: auto;
+        text-align: center;
+    }
+
+}
+@media only screen and (max-width: 360px) {
+
+}

@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.maincontainer{
+    height:100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    background-image: url('../../../public/images/owlBackground.avif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    #gif{
+        position: absolute;
+        object-fit: contain;
+        height: 200px;
+        width: 200px;
+        top: 50%;
+        z-index: 1;
+        // border: 1px solid red;
+    }
+    #picture-1{
+        z-index: 2;
+        position: fixed;
+        object-fit:contain;
+        width: 250px;
+        height: 250px;
+        top: 30%;
+        border-radius: 100%;
+    }
+    h1{
+        position: absolute;
+        bottom: 8%;
+    }
+
+}
+@media only screen and (max-width: 980px) {
+    .maincontainer{
+        background-image: url('../../../public/images/educationalBackground-mobile.jpeg');
+        background-size: cover;
+       
+    }
+    }

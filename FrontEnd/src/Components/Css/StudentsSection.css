@@ -1,0 +1,302 @@
+@import url("../../App.css");
+@import url("https://fonts.googleapis.com/css2?family=Charmonman:wght@700&family=Chicle&family=Courgette&family=Mochiy+Pop+One&display=swap");
+
+.layout.showSidebar main {
+  width: calc(100% - 200px); /* Adjust the width value as per your requirement */
+}
+#AdminSidebar ,#Sidebar {
+  width: 20vw;
+  height: 100vh;
+  background-color: white;
+  border-radius: 0 0 16px;
+  border: 1px solid rgba(255, 255, 255, 0.49);
+}
+#Sidebar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+}
+#Sidebar .scroller ,#AdminSidebar .scroller{
+  padding: 0;
+  height: 90vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#Sidebar ul .li,#AdminSidebar ul .li , .sidebarElem {
+  margin-left: 4px;
+  width: 250px;
+  height: 50px;
+  list-style-type: none;
+  padding: 10px;
+  display: block;
+  color: black;
+  font-weight: bolder;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}
+a.sidebarElem{
+  margin: 2px 0 2px 0;
+  animation: color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+#Sidebar ul .li i,#AdminSidebar ul .li i {
+  margin-right: 12px;
+}
+.accordion-item {
+  border: none;
+}
+.accordion-body {
+  padding: 10px;
+}
+.sub-li {
+  border-radius: 6px;
+  display: block;
+  margin: 3px;
+  font-size: 17px;
+  padding: 10px;
+  border-bottom: 1px solid rgb(167, 165, 165);
+  width: 100%;
+  
+}
+
+a.sidebarElem:focus{
+  box-shadow: inset 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  outline: none;
+}
+.sub-li:hover {
+  background: rgb(206, 203, 203);
+  color: black;
+}
+.accordion-button {
+  background-color: white;
+  border: 0;
+}
+#AdminSidebar .accordion-body .sub-li{
+  margin-left: 10px;
+  width: 95%;
+}
+
+#Sidebar ul .li:hover, #AdminSidebar ul .li:hover {
+  background-color: var(--grey-color);
+}
+.dropdown-item:hover > .li {
+  /* color: white; */
+  /* box-shadow: 0px 0px 1px 0px var(--title-color);
+  background-color: var(--title-color); */
+}
+
+
+hr {
+  margin: 0;
+  padding: 0;
+}
+.hide {
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+}
+.hide:hover {
+  border-radius: 10px;
+  background-color: var(--grey-color);
+}
+.hamburger h2 {
+  width: 50px;
+  height: 50px;
+  padding: 0%;
+  text-align: center;
+  padding: 6px;
+  margin: 0;
+}
+.hamburger:hover {
+  cursor: pointer;
+  background-color: rgba(191, 189, 189, 0.423);
+  border-radius: 10px;
+}
+.studentNav {
+  position: sticky;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn-primary {
+  font-weight: bolder;
+  background-color: var(--title-color);
+}
+.btn-primary:hover {
+  background-color: var(--title-color);
+  color: white;
+}
+li {
+  list-style-type: none;
+}
+
+#accountDetails img {
+  border-radius: 100%;
+}
+.acc-details-pic {
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+  margin: auto;
+}
+.details {
+  width: 250px;
+}
+.small-title {
+  color: var(--title-color);
+}
+.showSidebar {
+  display: block;
+}
+.hideSidebar {
+  display: none;
+}
+
+/* Alert Section */
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+
+/* Message Section */
+.inputSection {
+  width: 100%;
+  padding: 9px 12px;
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  bottom: 0;
+  background-color: rgb(176, 176, 253);
+  /* border: 1px solid black; */
+  border-radius: 13px 13px 0 0;
+}
+.inpMsg {
+  display: inline-block;
+  width: 90%;
+  padding: 5px 14px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  font-size: larger;
+}
+.sendBtn {
+  color: var(--title-color);
+  font-size: 35px;
+  cursor: pointer;
+}
+.msgBox {
+  height: 80vh;
+  overflow-y: scroll;
+  padding: 12px 25px;
+}
+.left {
+  float: left;
+  clear: both;
+  border-radius: 0px 15px 15px 15px;
+}
+.time {
+  position: relative;
+  display: block;
+  color: grey;
+  left: 0;
+  bottom: 0;
+}
+.message .time {
+  float: right;
+  clear: both;
+}
+.right {
+  float: right;
+  clear: both;
+  border-radius: 15px 0px 15px 15px;
+}
+.message {
+  clear: both;
+  color: white;
+  background-color: var(--title-color);
+  width: 25rem;
+  margin: 12px 0;
+  padding: 10px;
+}
+@keyframes component {
+  from {
+    background-color: white;
+  }
+  to {
+    background-color: var(--title-color);
+  }
+}
+
+/* About Student */
+.Profile-Picture {
+  width: 20%;
+  height: 20%;
+  border-radius: 100%;
+}
+/* About Student ends */
+
+@media only screen and (max-width: 1150px) {
+  .message {
+    width: 20rem;
+  }
+  #Sidebar,#AdminSidebar {
+    min-width: 270px;
+  }
+  .inpMsg {
+    display: inline-block;
+    width: 80%;
+    font-size: medium;
+  }
+}
+@media only screen and (max-width: 850px) {
+  #Sidebar,#AdminSidebar {
+    z-index: 999999;
+    position: fixed;
+  }
+}
+
+/* Teacher Section */
+@media only screen and (max-width: 550px) {
+  .message {
+    width: 15rem;
+  }
+  #Sidebar ,#AdminSidebar{
+    position: fixed;
+    z-index: 999999;
+    width: 90vw;
+  }
+  #Sidebar ul .li,#AdminSidebar ul .li{
+    width: 100%;
+  }
+  .inpMsg {
+    display: inline-block;
+    width: 70%;
+    font-size: medium;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .std-container {
+    padding: 0;
+  }
+  nav{
+    padding: 20px;
+  }
+  .dash-header h1{
+    font-size: 20px;
+  }
+  #Sidebar,#AdminSidebar{
+    width: 100vw;
+  }
+  .inpMsg {
+    display: inline-block;
+    padding: 0px 7px;
+    width: 62%;
+    font-size: medium;
+  }
+}

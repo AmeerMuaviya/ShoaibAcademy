@@ -1,0 +1,68 @@
+.quote {
+	position: relative;
+	width: 600px;
+	margin: auto;
+	padding: 1rem;
+	background-color: transparent;
+	background-image: linear-gradient(
+			-45deg,
+			transparent,
+			transparent 2%,
+			white 2%,
+			white 85%,
+			transparent,
+			85%,
+			transparent
+		),
+		linear-gradient(to bottom right, #2ad, #2ad 90%, transparent 90%);
+	background-position: top left, 0.2em 0.2em;
+	background-repeat: no-repeat;
+	filter: drop-shadow(0 0 15px #0005);
+}
+
+.quote::before,
+.quote::after {
+	position: absolute;
+	z-index: -1;
+	display: block;
+	width: 3rem;
+	height: 4rem;
+	content: "";
+	z-index: 0;
+	font-size: 8rem;
+	font-family: Georgia, Times, Garamond, serif;
+}
+
+.quote::before {
+	top: -2rem;
+	left: 1rem;
+	content: open-quote;
+}
+
+.quote::after {
+	bottom: 0rem;
+	right: 1rem;
+	content: close-quote;
+}
+
+.quote::before,
+.quote::after,
+.quote h2 {
+	text-shadow: -2px 2px #fff, -1.5px 1.5px #fff, -1px 1px #fff, -0.5px 0.5px #fff;
+}
+
+.quote h2 {
+	margin-block-end: 1rem;
+}
+
+.quote p {
+	margin-block-start: 1rem;
+	text-indent: 2ch;
+}
+
+@media only screen and (max-width: 650px) {
+	.quote {
+		position: relative;
+		width: 90vw;
+	}
+    }

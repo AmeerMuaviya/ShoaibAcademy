@@ -1,0 +1,117 @@
+.home-main-container {
+  height: 500px;
+  background-image: linear-gradient(rgba(32, 32, 32, 0.493), rgba(0, 0, 0, 0.856)),
+    url("./images/teacherr.webp");
+  position: relative;
+  background-size: cover;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.gudLuck{
+  font-size: 45px;
+  line-height: 80px;
+}
+.welcome {
+  font-style: italic;
+  font-size: 4vw;
+}
+.username {
+  display: block;
+  font-size: 12vw;
+  color: white;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+}
+.home-main-container img {
+  width: 400px;
+  border-radius: 10px;
+  height: 450px;
+}
+
+.home-features-container {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  overflow: hidden;
+  justify-content: space-between;
+}
+.home-features-container img {
+  width: 50%;
+}
+.home-features-container div {
+  width: 50%;
+}
+.home-features-container div ul li {
+  font-weight: bolder;
+  font-size: 25px;
+}
+
+.home-feature-heading {
+  font-size: 60px;
+}
+.home-features-container-0 {
+  flex-direction: row;
+}
+.home-features-container-1 {
+  flex-direction: row-reverse;
+}
+@media only screen and (max-width: 850px) {
+  .home-features-container img {
+    width: 100%;
+  }
+  .home-features-container div {
+    width: 100%;
+  }
+  .home-feature-heading {
+    font-size: 55px;
+  }
+  .home-features-container div ul li {
+    font-size: 25px;
+  }
+  .gudLuck{
+    font-size: 25px;
+  }
+  .home-main-container img {
+    width: 250px;
+    border-radius: 100%;
+    height: 250px;
+  }
+  .welcome {
+    font-style: italic;
+    font-size: 10vw;
+  }
+  .username {
+  -webkit-text-stroke-width: 0px;
+    display: block;
+    font-size: 15vw;
+  }
+  }
+@media only screen and (max-width: 550px) {
+
+  .home-feature-heading {
+    font-size: 25px;
+  }
+  .home-features-container div ul li {
+    font-size: 15px;
+  }
+  .gudLuck{
+    font-size: 25px;
+  }
+  .home-main-container img {
+    width: 250px;
+    border-radius: 100%;
+    height: 250px;
+  }
+  .welcome {
+    font-style: italic;
+    font-size: 10vw;
+  }
+  .username {
+  -webkit-text-stroke-width: 0px;
+    display: block;
+    font-size: 18vw;
+  }
+  }

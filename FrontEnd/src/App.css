@@ -1,0 +1,583 @@
+:root{
+  --title-color:rgb(16, 94, 141);
+  --grey-color:rgba(177, 175, 175, 0.479);
+  --grey-dark-color:rgba(177, 175, 175, 0.705);
+}
+.special-text{
+  color: var(--title-color);
+}
+html {
+  scroll-behavior: smooth;
+}
+span.test::before{
+  display: none!important;
+}
+/* 
+Sevillana Rock Reggae Marker Pacifico Fondamento Nastaliq Kanit container fs-Charmonman fs-Chicle fs-Courgette fs-Mochiy-Pop-One fs-dangerk Carter
+*/
+.Fugaz{
+  font-family: 'Fugaz One', cursive;
+}
+.Plus,.password{
+  font-family: 'M PLUS 1 Code', sans-serif;
+}
+.page-heading{
+  margin: 10px;
+  font-family: 'Kanit', sans-serif;
+}
+.Tiro{
+  font-family: 'Tiro Telugu', serif;
+
+}
+.Carter{
+  font-family: 'Carter One', cursive;
+}
+.Sevillana{
+  font-family: 'Sevillana', cursive; 
+}
+.Rock{
+  font-family: 'Rock Salt', cursive;
+}
+.Reggae{
+  font-family: 'Reggae One', cursive;
+}
+.Marker{
+  font-family: 'Permanent Marker', cursive;
+}
+.Pacifico{
+  font-family: 'Pacifico', cursive;
+}
+.Fondamento{
+  font-family: 'Fondamento', cursive;
+}
+.Abril{
+  font-family: 'Abril Fatface', cursive;
+
+}
+.Nastaliq{
+  font-family: 'Noto Nastaliq Urdu', serif;
+}
+.Kanit{
+  font-family: 'Kanit', sans-serif;
+}
+.container{
+  overflow-x: auto;
+}
+.dropdown-item:hover{
+  color: white;
+}
+.disabled-div {
+  pointer-events: none;
+  opacity: 0.5;
+}
+.fs-Charmonman{
+  font-family: 'Charmonman', cursive;
+}
+.fs-Chicle{
+  font-family: 'Chicle', cursive;
+}
+.fs-Courgette{
+  font-family: 'Courgette',
+}
+.fs-Mochiy-Pop-One{
+  font-family: 'Mochiy Pop One', sans-serif;
+}
+.fs-dangerk{
+  font-family: 'Dangrek' ,cursive;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.letter-spacing{
+  letter-spacing: 1px;
+  line-height: 40px;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+.bannerText button{
+  background-color: white;
+  color: var(--title-color);
+}
+.bannerText button:hover{
+  background-color: var(--title-color);
+  border: 1px solid white;
+  color: white;
+}
+.App-link {
+  color: #61dafb;
+}
+.special-form{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--title-color);
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.btn-primary{
+  background: var(--title-color)!important;
+}
+.bg-primary{
+  background: var(--title-color)!important;
+}
+.bg-c-secondary{
+  background: var(--grey-color)!important;
+}
+.bg-c-secondary:hover{
+  background: var(--grey-dark-color)!important;
+}
+.text-primary{
+  color: var(--title-color)!important;
+}
+.bg-primary{
+  background: var(--title-color)!important;
+}
+.block-btn{
+  display: block;
+  margin: auto;
+}
+.title{
+  font-size: 2rem;
+  margin: 0;
+  letter-spacing: 2px;
+  font-weight: bolder;
+  color: var(--title-color);
+}
+
+.banner{
+  background-color: var(--title-color);
+  overflow: hidden;
+  /* border: 3px solid red; */
+  display: flex;
+  justify-content: space-between;
+}
+.bannerImage{
+  object-fit: cover;
+  margin: 8px;
+  /* border: 2px solid red; */
+  width: 830px;
+  height: 580px;
+  clip-path: polygon(14% 0, 100% 0%, 100% 100%, 19px 100%);
+
+}
+.bannerImage img{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.bannerText{
+  margin: 60px 15px;
+  width: 40rem;
+  height: 30rem;
+  padding: 20px;
+  /* border: 3px solid black; */
+}
+.bannerText h3{
+  font-family: 'Courgette', cursive;
+  font-size: xx-large;
+}
+.bannerText h1{
+  font-family: 'Mochiy Pop One', sans-serif;
+  font-size: 3rem;
+}
+input[type=checkbox] {
+  margin: 4px 0 0;
+  line-height: normal;
+  width: 20px;
+  height: 20px;
+  } 
+
+#logo{
+  width: 67px;
+  border-radius: 100%;
+  margin: 0 16px;
+}
+span.logo{
+  display: none;
+}
+.nav-link{
+  font-weight: bolder;
+  color: black;
+  font-size: 20px;
+}
+.card{
+  margin: 8px 0px;
+  width: 28rem;
+  padding: 23px;
+  min-height: 13rem;
+  transition: .1s ease-in-out;
+  -webkit-transition: .2s;
+}
+.card:hover{
+  box-shadow: 0px 0px 15px 0px grey;
+}
+.card.print-card:hover{
+    box-shadow: none;
+}
+.card-shadow{
+  box-shadow: 0px 0px 15px 0px grey;
+}
+.card::after{
+  transition: 1s;
+}
+.special-icon{
+  color: var(--title-color);
+}
+.card span {
+  padding: 23px;
+}
+.facilities{
+  display: flex;
+  padding: 30px;
+  justify-content:space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 65px 0;
+}
+.classes{
+  min-height: 500px;
+  margin: 100px 0px;
+  display: flex;
+  flex-direction: column;
+  padding: 12px 54px;
+}
+.classes h1{
+  font-family: 'Charmonman', cursive;
+  font-size: 6vh;
+}
+#AllCards{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.classCard{
+  max-width: 350px;
+  min-height:380px;
+  margin: 5px;
+  box-shadow: 0px 8px 12px 2px grey;
+}
+
+.cardImg{
+  max-width: 100%;
+  height:300px;
+  object-fit: cover;
+}
+img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardBody{
+  padding: 20px;
+}
+
+.cardBody h3{
+  font-family: 'Chicle', cursive;
+  color: var(--title-color);
+}
+
+
+  /* Blogs section  */
+  #blogs{
+    padding: 23px;
+  }
+  #blogs h1{
+    font-family: 'Charmonman', cursive;
+    font-size: 6vh;
+  }
+  #AllBlogs{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  /* Blog section css ends here */
+  #Location{
+    margin: 33px 0px;
+    padding: 12px;
+  }
+  #maps{
+    width: 100%;
+    padding: 23px 0px;
+  }
+  #Location h1{
+    font-family: 'Charmonman', cursive;
+  }
+  /* Footer css */
+  footer{
+    width: 100%;
+    min-height: 75vh;
+    display: flex;
+    flex-direction: row;
+    padding: 23px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: var(--title-color);
+  }
+  footer h2{
+    font-family: 'Chicle', cursive;
+    letter-spacing: 2px;
+  }
+  footer div{
+    padding: 23px;
+    width: 400px;
+  }
+  footer li{
+    cursor: pointer;
+    margin: 13px;
+    font-size: 20px;
+    list-style-type: none;
+  }
+  footer i{
+
+    margin: 0px 13px;
+  }
+  footer ul{
+      padding: 15px;
+  }
+
+  a{
+    text-decoration: none;
+    color:black;
+  }
+  a:hover{
+    color: black;
+  }
+  #copyright{
+    width: 100%;
+    min-height: 100px;
+    background-color: var(--title-color);
+    border-top: 1px solid grey;
+    text-align: center;
+
+  }
+ 
+  /* Footer css ends */
+
+
+  /*  */
+  th{
+    font-size: 20px;
+    text-align: center;
+  }
+  td{
+    text-align: center;
+  }
+  
+  .special-card{
+    width: 70%;
+  }
+  .formSection{
+    width: 75%;
+  }
+  @media only screen and (max-width: 1150px) {
+    body{
+      overflow-x: hidden;
+    }
+    .banner{
+      background-image: url('../public/images/educationalBackground.jpg');
+      background-repeat: no-repeat;
+      height: auto;
+      overflow: hidden;
+      background-size: cover;
+    }
+    .bannerImage{
+      display: none;
+    }
+    .bannerText {
+      padding: 0;
+      width: 100%;
+    }
+    .bannerText .btn{
+      display: block;
+      margin: auto;
+    }
+    .bannerText *{
+      text-align: center;
+    }
+    }
+  @media only screen and (max-width: 550px) {
+    .formSection{
+      width: 90%;
+    }
+    .bannerText h1{
+      font-size: xx-large;
+    }
+    nav{
+      width: 100vw;
+      overflow: hidden;
+    }
+    .recharts-wrapper{
+      width: 500px;
+    }
+    .w-max{
+      width: max-content;
+    }
+    span.title{
+      display: none;
+    }
+    span.logo{
+      display: block;
+    }
+   .special-form{
+  width: 100%;
+   }
+   .special-card{
+  width: 100%;
+   }
+    #logo{
+      display: none;
+    }
+    .classes{
+      padding: 12px 4px;
+    }
+    .classCard{
+      margin: 15px 3px;
+    }
+    .socialLinks h2{
+      display: block;
+      margin: 23px auto;
+      text-align: center;
+    }
+    .title{
+      font-size: 25px;
+    }
+    .hamburger h2{
+      height: 40px;
+      width: 40px;
+    }
+    
+  }
+  @media only screen and (max-width: 355px) {
+    .bannerText h1{
+      font-size: xx-large;
+    }.formSection{
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    .classCard{
+      width: 100%;
+    }
+    .facilities .card{
+      width: 100%;
+      margin-right: 0;
+      margin-left: 0;
+    }
+    .facilities{
+      margin-right: 0;
+      margin-left: 0;
+      padding: 0;
+    }
+  }
+
+/* main{
+  border: 1px solid red;
+  margin-left: 20vw;
+  margin-top: 10px;
+}
+nav{
+  margin-left: 20vw;
+} */
+  /* Date Range picker css starts============> */
+
+
+
+
+/* .rdrDateDisplayWrapper,.rdrMonthAndYearWrapper  {
+  width: 780px;
+} */
+.rdrMonthAndYearPickers select {
+  border: 1px solid black;  
+  width: 191px;
+}
+  @media only screen and (max-width: 1190px) {
+ .modal-body{
+  overflow: scroll;
+ }
+ .rdrDateDisplayWrapper,.rdrMonthAndYearWrapper  {
+  width: 680px;
+}
+.rdrMonthAndYearPickers select {
+  width: 246px;
+}
+  }
+
+
+
+
+/* .rdrDateDisplayWrapper,.rdrMonth .rdrWeekDays,.rdrDays {
+  width: 450px;
+}
+.rdrDateDisplayWrapper, .rdrMonth .rdrWeekDays, .rdrDays{
+  width: 474px;
+}
+.rdrMonthAndYearPickers{
+  width: 393px;
+}
+.rdrMonthAndYearPickers select,.rdrDateDisplayItemActive input {
+  width: 200px;
+}
+.rdrNextPrevButton{
+  margin: 0;
+} */
+
+.rdrMonths {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+/* Date Range picker css ends============> */
+
+.m-icon{
+  color: var(--title-color);
+}
+
+
+/* ==========================================Scroll Bar */
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  /* background: #f1f1f1;  */
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+@media print {
+  .hide-when-print{
+    display: none;
+  }
+}

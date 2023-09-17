@@ -1,0 +1,138 @@
+.result-header .logo {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.result-main-container {
+  margin: 30px auto;
+}
+.result-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.result-container {
+  border: 1px solid black;
+  margin: 20px auto;
+}
+.result-heading {
+  font-size: 85px;
+  text-align: center;
+  margin-left: 50px;
+  color: var(--title-color);
+}
+.result-heading h2 {
+  margin-left: 100px;
+  font-size: 37px;
+}
+.result-phone {
+  border-bottom: 1px solid;
+  text-align: end;
+  font-weight: bolder;
+}
+.result-info {
+  display: flex;
+  justify-content: space-around;
+}
+.result-info p {
+  font-weight: bolder;
+  font-size: 20px;
+}
+.result-info span {
+  display: inline-block;
+  width: 250px;
+  margin-left: 10px;
+  padding: 0;
+}
+.result-table th {
+  text-align: start;
+}
+
+.last-info span {
+  display: inline-block;
+  width: 250px;
+  border-bottom: 1px solid black;
+  text-align: center;
+}
+.attendence span {
+  width: 250px;
+}
+.comments span {
+  width: 600px;
+}
+p {
+  font-weight: bolder;
+}
+.result-list * {
+  list-style-type: "\➤ ";
+  font-size: 20px;
+  font-weight: bolder;
+}
+.btn-close{
+    display: flex;
+}
+
+@media print {
+  .result-container {
+    overflow: hidden;
+  }
+  .navbar {
+    display: none !important;
+  }
+  .result-heading {
+    font-size: 52px;
+  }
+  .result-heading h2 {
+    font-size: 35px;
+  }
+  .result-header .logo {
+    width: 160px;
+    height: 160px;
+  }
+  .result-container {
+    border: none;
+  }
+  .result-main-container {
+    margin: auto;
+  }
+  .btn-close {
+    display: none;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .result-container .logo {
+    width: 100px;
+    height: 100px;
+  }
+  .result-heading {
+    font-size: 25px;
+  }
+  .result-heading h2 {
+    font-size: 15px;
+  }
+  .result-address {
+    font-size: 10px;
+  }
+  .last-info span {
+    width: 100px;
+  }
+  .attendence span {
+    width: 100px;
+  }
+  .comments span {
+    width: 300px;
+  }
+  .result-container {
+    margin: auto;
+  }
+  .result-info span {
+    width: 150px;
+  }
+  .result-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

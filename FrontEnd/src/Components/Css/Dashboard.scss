@@ -1,0 +1,121 @@
+.admin-dashboard{
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+}
+.dash-header {
+  h1 {
+    font-size: 3vw;
+    display: inline;
+    font-family: "Carter One", cursive;
+  }
+}
+
+
+h1.dashboard-title {
+  font-family: "Fugaz One", cursive;
+}
+.student-section {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  .graph {
+    width: 50%;
+    height: 350px;
+    padding: 10px;
+  }
+  .circular-progress-bar {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    button {
+      display: block;
+      width: 70%;
+    }
+    .bar {
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      border-radius: 10px;
+      width: 230px;
+      p{
+        margin: 0;
+      }
+      .circular-bar {
+        width: 200px;
+        height: 200px;
+      }
+    }
+  }
+}
+.all-info-cards {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  .info-card {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    width: 350px;
+    border-radius: 10px;
+    border: 1px lightblue;
+    .circular-progress-bar {
+      width: 10rem;
+      height: 10rem;
+      margin: auto;
+    }
+    .btn {
+      height: 50px;
+    }
+  }
+}
+.CircularProgressbar-text {
+  font-weight: bolder;
+}
+
+@media only screen and (max-width: 850px) {
+  .student-section {
+    .graph {
+      width: 97vw;
+    }
+  }
+  .circular-progress-bar {
+   width: 100%!important;
+   .btn{
+    width: 50%!important;
+   }
+  }
+  .info-card {
+    .circular-progress-bar {
+      width: 140px!important;
+      height: 140px!important;
+    }
+    }
+}
+@media only screen and (max-width: 450px) {
+  .student-section .circular-progress-bar .bar .circular-bar {
+    width: 70%;
+  }
+  .all-info-cards{
+    gap: 60px;
+  }
+  .all-info-cards .info-card {
+    width: 100%;
+  }
+  .dash-header {
+    h1 {
+      font-size: 20px;
+      display: inline;
+      font-family: "Carter One", cursive;
+    }
+  }
+}

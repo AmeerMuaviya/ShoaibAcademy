@@ -1,0 +1,35 @@
+$navheight:80px;
+
+.layout{
+    display: flex;
+    overflow-y: hidden;
+    aside{
+     .header{
+         height: $navheight - 2px ;
+        }
+    }
+    nav{
+        height: calc($navheight);
+        border-bottom: 1px solid rgb(170, 170, 170);
+    }
+    .content{
+        overflow: hidden;
+        flex: 3;
+        main{
+           overflow: scroll;
+           height: calc(100vh - $navheight);
+       }
+       aside{
+           height: 100vh;
+       }
+    }
+}
+@media only screen and (max-width: 350px) {
+    .layout{
+        nav{
+            .dash-header h1{
+                font-size: 15px!important;
+            }
+        }
+    }
+    }
