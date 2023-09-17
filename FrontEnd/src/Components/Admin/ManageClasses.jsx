@@ -71,7 +71,6 @@ const ManageClasses = () => {
         _sub.splice(index, 1);
       }
     }
-    console.log(_sub)
     setSubject(_sub);
   }
   function reset() {

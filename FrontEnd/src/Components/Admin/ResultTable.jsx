@@ -168,7 +168,6 @@ const ResultTable = () => {
       </tr>
     );
   }
-  console.log(AllStudents)
   return (
     <div className="container result-main-container">
       <button

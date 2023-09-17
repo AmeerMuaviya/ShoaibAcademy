@@ -4,7 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/authContext";
 import axios from "../../../axiosInstance";
 const Navbar = (props) => {
-  console.log('props: ', props);
   const navigate = useNavigate();
   const { logout, user } = useContext(AuthContext);
   const { setNCounts, nCounts } = useContext(generalContext);

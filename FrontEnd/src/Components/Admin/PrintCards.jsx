@@ -8,7 +8,6 @@ const PrintCards = () => {
   const {showAlert}=useContext(generalContext)
   const [students, setStudents] = useState([]);
   const [selectedStudents, setSelectedStudents] = useState([])
-  console.log(selectedStudents)
   function getStudents() {
     axios.get("/students/all").then((response) => {
       if (!response.data.err) setStudents(response.data);
