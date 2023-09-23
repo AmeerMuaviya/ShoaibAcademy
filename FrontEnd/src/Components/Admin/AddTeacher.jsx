@@ -7,6 +7,7 @@ import { Calendar } from "react-date-range";
 import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import Modal from "../Modal";
+import moment from "moment";
 const AddTeacher = () => {
   const navigate = useNavigate();
   const state = useLocation().state;
@@ -19,8 +20,9 @@ const AddTeacher = () => {
     phone: state?.phone || "",
     sallary: state?.sallary || "",
     address: state?.address || "",
-    age: state?.age || "",
     joiningDate: state?(new Date(state.joiningDate)) : new Date(),
+    dateOfBirth: state?(new Date(state.dateOfBirth)) : new Date(),
+    qualification:state?.qualification||"",
     dp: state?.dp || "",
     status: "Teacher",
     password: state?.password || "",
@@ -129,15 +131,6 @@ const AddTeacher = () => {
           required
           />
         <input
-          type="number"
-          defaultValue={data.age}
-          placeholder="Teacher age"
-          id="age"
-          onChange={handleChange}
-          required
-          className="stdform-item"
-        />
-        <input
           type="email"
           defaultValue={data.email}
           placeholder="Email address"
@@ -178,6 +171,15 @@ const AddTeacher = () => {
           required
           className="stdform-item"
         />
+        <input
+          type="text"
+          placeholder="Qualification"
+          defaultValue={data.qualification}
+          id="qualification"
+          onChange={handleChange}
+          required
+          className="stdform-item"
+        />
         <Modal
           modalId={"datePickerModal"}
           title='Pick joining date'
@@ -193,12 +195,36 @@ const AddTeacher = () => {
         />
         <button
           type="button"
-          className="btn btn-light fw-bolder stdform-item"
+          className="btn btn-light stdform-item"
           data-bs-toggle="modal"
           data-bs-target="#datePickerModal"
         >
-          Select joining date
+          Select joining date ({moment(data.joiningDate).format("DD MMM, YYYY")})
         </button>
+
+
+        <Modal
+          modalId={"dobt"}
+          title='Pick date of birth'
+          cancelOnly
+          body={
+            <div style={{ display: "flex", flexFlow: "column nowrap"}}>
+              <Calendar
+                onChange={(item) => setData({ ...data, dateOfBirth: item })}
+                date={data.dateOfBirth}
+              />
+            </div>
+          }
+        />
+        <button
+          type="button"
+          className="btn btn-light stdform-item"
+          data-bs-toggle="modal"
+          data-bs-target="#dobt"
+        >
+          Date of Birth ({moment(data.dateOfBirth).format("DD MMM, YYYY")})
+        </button>
+
         <input
           type="text"
           placeholder={

@@ -37,8 +37,8 @@ const AddMarks = () => {
     }, [state])
 
 
-    function addStudentData(name,uid,totalMarks,obtainedMarks) {
-      const student = { name, uid, totalMarks, obtainedMarks,subject:state.subject,date:scheduleData.date,syllabus:scheduleData.subject[state.subject] };
+    function addStudentData(name,fatherName,uid,totalMarks,obtainedMarks) {
+      const student = { name,fatherName, uid, totalMarks, obtainedMarks,subject:state.subject,date:scheduleData.date,syllabus:scheduleData.subject[state.subject] };
       let studentExists = false;
       studentData.forEach((data, index) => {
         if (data.uid === uid) {
@@ -91,12 +91,12 @@ const AddMarks = () => {
     <div className='container my-3'>
         <h1>Schedule data</h1>
       {scheduleInfo && scheduleData && <div className="infoDiv shadow-lg p-1 d-flex justify-content-around flex-wrap">
-        <div className="text-center">
+        <div className="text-left">
           <h2>Class Name: <span className="text-primary">{scheduleInfo.className}</span></h2>
           <h2>Teacher Name: <span className="text-primary">{scheduleInfo.teacherName}</span></h2>
           <h2>Test Type: <span className="text-primary">{scheduleInfo.testType}</span></h2>
         </div>
-        <div className="text-center">
+        <div className="text-left">
           <h2>Conducting date: <span className="text-primary">{scheduleData.date}</span></h2>
           <h2>Conducting day: <span className="text-primary">{scheduleData.day}</span></h2>
           <h2>Subject(s): <span className="text-primary">{state.subject==='all'?Object.keys(scheduleInfo.subject).join('-'):state.subject}</span></h2>
@@ -106,7 +106,8 @@ const AddMarks = () => {
       <table className='table border my-3 table-success'>
         <thead>
           <tr>
-            <th>Student Name</th>
+            <th>Name</th>
+            <th>Father Name</th>
             <th>Subject</th>
             <th>Total Marks</th>
             <th>Obtained Makrs</th>
@@ -116,9 +117,10 @@ const AddMarks = () => {
           {students && students.map((student,index) => (
           <tr key={index}>
             <td>{student.username}</td>
+            <td>{student.fatherName}</td>
             {scheduleData && <td>{state.subject}</td>}
             <td>{totalMarks}</td>
-            <td><input type="number" name="obtained-marks" onChange={e=>addStudentData(student.fullName,student.uid,totalMarks,e.target.value,getSubject(student.subjects,scheduleData.subject))}/></td>
+            <td><input type="number" name="obtained-marks" onChange={e=>addStudentData(student.fullName,student.fatherName,student.uid,totalMarks,e.target.value,getSubject(student.subjects,scheduleData.subject))}/></td>
           </tr>            
           ))}
         </tbody>

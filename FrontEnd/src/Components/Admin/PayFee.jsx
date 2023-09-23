@@ -49,16 +49,18 @@ const PayFee = () => {
         name="month"
         className="stdform-item mx-auto d-block"
         onChange={handleChagne}
+        required
       />
       {students && (
         <DataTable
           arrayOfObjects={students}
           selectedStudents={selectedStudents}
           onChange={setSelectedStudents}
-          keysToDisplay={["username", "class", "gender"]}
+          keysToDisplay={["username","fatherName", "class", "gender"]}
         />
       )}
       <button
+      type="submit"
         className="btn btn-primary block-btn stdform-item"
         onClick={payfee}
       >

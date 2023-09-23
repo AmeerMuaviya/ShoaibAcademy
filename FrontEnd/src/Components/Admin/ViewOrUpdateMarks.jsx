@@ -64,12 +64,12 @@ const ViewOrUpdateMarks = (props) => {
     <div className='container my-3'>
     <h1>Schedule data</h1>
   {scheduleData && scheduleInfo && <div className="infoDiv shadow-lg p-1 d-flex justify-content-around flex-wrap">
-    <div className="text-center">
+    <div className="text-left">
       <h2>Class Name: <span className="text-primary">{scheduleData.className}</span></h2>
       <h2>Teacher Name: <span className="text-primary">{scheduleData.teacherName}</span></h2>
       <h2>Test Type: <span className="text-primary">{scheduleData.testType}</span></h2>
     </div>
-    <div className="text-center">
+    <div className="text-left">
       <h2>Conducting date: <span className="text-primary">{scheduleInfo.date}</span></h2>
       <h2>Conducting day: <span className="text-primary">{scheduleInfo.day}</span></h2>
       <h2>Subject: <span className="text-primary">{state.subject==='all'?Object.keys(scheduleInfo.subject).join('-'):state.subject}</span></h2>
@@ -79,6 +79,7 @@ const ViewOrUpdateMarks = (props) => {
     <thead>
       <tr>
         <th>Name</th>
+        <th>Father name</th>
         <th>Subject</th>
         <th>Syllabus</th>
         <th>Total Marks</th>
@@ -89,6 +90,7 @@ const ViewOrUpdateMarks = (props) => {
       {scheduleData && result.map((value,index) => (
       <tr key={index}>
         <td>{value.name}</td>
+        <td>{value.fatherName}</td>
         <td>{value.subject}</td>
         <td>{value.syllabus}</td>
         <td>{state.view?<span>{value.totalMarks}</span>:<input type="text"defaultValue={value.totalMarks} name='totalMarks' id={value.uid} onChange={handleDataChange} />}</td>

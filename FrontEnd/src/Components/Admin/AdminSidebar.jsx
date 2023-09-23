@@ -1,45 +1,41 @@
 import React, { useContext, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/authContext";
 import axios from "../../axiosInstance";
 import { generalContext } from "../../contexts/generalContext";
-/* Add or delete teacher
-Add or delete student
-Add or delete or update subject 
-Send message notification etc to teacher and student
-View result of each student
-Print result sheet of every student (individually or collectively)
-View and update fee info etc
-Add test category 
-Upload notes
-Notify admin whenever teacher adds marks of a student or test schedule*/
 const AdminSidebar = (props) => {
   const { sidebar, setSidebar } = props;
-  let navigate = useNavigate();
-  const { logout, user } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const { setNCounts, nCounts } = useContext(generalContext);
-  const handleLogout = (e) => {
-    e.preventDefault();
-    logout();
-    navigate("/");
-  };
   let toggleSidebar = () => setSidebar(!sidebar);
-
-  // useEffect(() => {
-  //   let listener=()=>{
-  //     setSidebar(false)
-  //   }
-  //   let element=document.getElementsByClassName('sidebarElem')
-  //   Array.from(element).forEach((elem) => {
-  //     elem.addEventListener('click',listener)
-  //   })
-
-  //   return () => {
-  //     Array.from(element).forEach((elem) => {
-  //       elem.removeEventListener('click',listener)
-  //       })
-  //   }
-  // }, [sidebar])
+  useEffect(() => {
+    // Function to check if the #AdminSidebar has fixed position
+    const isAdminSidebarSticky = () => {
+      const adminSidebar = document.getElementById('AdminSidebar');
+      if (adminSidebar) {
+        const computedStyle = getComputedStyle(adminSidebar);
+        return computedStyle.position === 'fixed';
+      }
+      return false;
+    };
+  
+    if (isAdminSidebarSticky()) {
+      let listener = () => {
+        setSidebar(false);
+      };
+      let element = document.getElementsByClassName('sidebarElem');
+      Array.from(element).forEach((elem) => {
+        elem.addEventListener('click', listener);
+      });
+  
+      return () => {
+        Array.from(element).forEach((elem) => {
+          elem.removeEventListener('click', listener);
+        });
+      };
+    }
+  }, [sidebar,setSidebar]);
+  
   useEffect(() => {
     axios.get(`/notifyAdmin/get-unseen`).then((response) => {
       setNCounts(response.data.count);
@@ -52,7 +48,7 @@ const AdminSidebar = (props) => {
       width="20"
       height="20"
       fill="currentColor"
-      class="bi bi-person-vcard"
+      className="bi bi-person-vcard"
       viewBox="0 0 16 16"
     >
       <path d="M5 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm4-2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5ZM9 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 9 8Zm1 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Z" />
@@ -383,9 +379,6 @@ const AdminSidebar = (props) => {
             <i className="bi bi-megaphone-fill"></i>Blogs/Broadcast
           </Link>
             </div>
-          <span className="li sidebarElem sidebarLogout" onClick={handleLogout}>
-            <i className="bi bi-box-arrow-left"></i>Logout
-          </span>
         </ul>
       </aside>
     </>

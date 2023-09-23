@@ -23,6 +23,7 @@ const AddStudent = () => {
     address: state?.address || "",
     age: state?.age || "",
     joiningDate: state?(new Date(state.joiningDate)): new Date(),
+    dateOfBirth: state?(new Date(state.dateOfBirth)): new Date(),
     dp: state?.dp || "",
     status: "Student",
     password: "",
@@ -228,19 +229,17 @@ const AddStudent = () => {
           type="text"
           className="stdform-item"
           placeholder="Student Phone Number (opt)"
-          defaultValue={data.phoneNumber}
+          defaultValue={data.studentPhoneNumber}
           id="studentPhoneNumber"
           onChange={handleChange}
-          required
         />
         <input
           type="text"
           className="stdform-item"
           placeholder="Guardian Phone Number (opt)"
-          defaultValue={data.phoneNumber}
+          defaultValue={data.guardianPhoneNumber}
           id="guardianPhoneNumber"
           onChange={handleChange}
-          required
         />
         <input
           type="text"
@@ -251,6 +250,27 @@ const AddStudent = () => {
           onChange={handleChange}
           required
         />
+        <Modal
+          modalId={"dob"}
+          title='Pick Date of birth'
+          cancelOnly
+          body={
+            <div style={{ display: "flex", flexFlow: "column nowrap"}}>
+              <Calendar
+                onChange={(item) => setData({ ...data, dateOfBirth: item })}
+                date={data.dateOfBirth}
+              />
+            </div>
+          }
+        />
+        <button
+          type="button"
+          className="btn btn-light fw-bolder stdform-item"
+          data-bs-toggle="modal"
+          data-bs-target="#dob"
+        >
+          Date of Birth ({moment(data.dateOfBirth).format("DD MMM, YYYY")})
+        </button>
         <Modal
           modalId={"datePickerModal"}
           title='Pick joining date'

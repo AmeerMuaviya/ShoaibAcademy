@@ -7,6 +7,7 @@ import moment from 'moment'
 import { useState } from 'react'
 const ViewTeacher = () => {
     const data = useLocation().state
+    console.log('data: ', data);
     let {capitallizeFirstLetter,url}=useContext(generalContext)
     const [imageURL, setImageURL] = useState('/images/defaultStBg.webp');
 
@@ -31,8 +32,8 @@ const ViewTeacher = () => {
     <div className='d-flex align-items-center' style={{backgroundImage:`url(${imageURL})`,height:'400px',verticalAlign:'center',backgroundSize:'cover'}}>
       <img src={parseInt(data.dp)?`${url}/getfile/${data.dp}`:data.gender==='Male'?`/images/profile-boy.webp`:'/images/profile-girl.jpg'} className='big-dp' alt="User Profile" />
       </div>
-      <h1>{capitallizeFirstLetter(data.username)}</h1>
-      
+      <h1>~ {capitallizeFirstLetter(data.username)}</h1>
+    
 
     <div className="detailsTable shadow-lg">
       <table className='table mt-5 shadow-lg mb-4'>
@@ -50,8 +51,8 @@ const ViewTeacher = () => {
             <th>{data.fatherName}</th>
           </tr>
           <tr>
-            <th>Age</th>
-            <th>{data.age}</th>
+            <th>Date of birth</th>
+            <th>{moment((new Date(data.dateOfBirth))).format("MMM DD, YYYY")}</th>
           </tr>
           <tr>
             <th>Gender</th>
@@ -66,12 +67,16 @@ const ViewTeacher = () => {
             <th>{data.email}</th>
           </tr>
           <tr>
+            <th>Qualification</th>
+            <th>{data.qualification}</th>
+          </tr>
+          <tr>
             <th>Address</th>
             <th>{data.address}</th>
           </tr>
           <tr>
             <th>Joining Date</th>
-            <th>{moment((new Date(data.joiningDate)), "YYYYMMDDHHmm").fromNow()}</th>
+            <th>{moment((new Date(data.joiningDate))).format("MMM DD, YYYY")}</th>
           </tr>
         </thead>
        

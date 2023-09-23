@@ -81,11 +81,6 @@ a.sidebarElem:focus{
 #Sidebar ul .li:hover, #AdminSidebar ul .li:hover {
   background-color: var(--grey-color);
 }
-.dropdown-item:hover > .li {
-  /* color: white; */
-  /* box-shadow: 0px 0px 1px 0px var(--title-color);
-  background-color: var(--title-color); */
-}
 
 
 hr {
@@ -241,12 +236,12 @@ li {
 }
 /* About Student ends */
 
+#Sidebar,#AdminSidebar {
+  min-width: 270px;
+}
 @media only screen and (max-width: 1150px) {
   .message {
     width: 20rem;
-  }
-  #Sidebar,#AdminSidebar {
-    min-width: 270px;
   }
   .inpMsg {
     display: inline-block;

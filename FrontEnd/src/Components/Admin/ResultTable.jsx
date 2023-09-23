@@ -125,11 +125,17 @@ const ResultTable = () => {
           </tr>
         ))}
         {_data.length > 1 && (
-          <tr>
-            <th className="text-center">Total Marks</th>
-            <td>{totalMarks}</td>
-            <td>{obtainedMarks}</td>
-          </tr>
+          <>
+            <tr>
+              <th className="text-center">Total Marks</th>
+              <td>{totalMarks}</td>
+              <td>{obtainedMarks}</td>
+            </tr>
+            <tr>
+              <th className="text-center" style={{colSpan:3}}>Percentage</th>
+              <td colSpan={2}>{((6/13)*100).toFixed(1)}%</td>
+            </tr>
+          </>
         )}
       </>
     ) : (
@@ -223,7 +229,7 @@ const ResultTable = () => {
                     </div>
                     <div>
                       <p>
-                        Class: <span>{value.class}</span>
+                        <span>Class: {value.class}</span>
                       </p>
                     </div>
                   </div>

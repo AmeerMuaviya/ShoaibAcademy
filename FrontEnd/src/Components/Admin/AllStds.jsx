@@ -9,7 +9,7 @@ const AllStds = ({state}) => {
   const [arr, setArr] = useState([])
   const [students, setStudents] = useState(arr)
   const [searchSection, setSearchSection] = useState(false)
-  const [searchQuery, setSearchQuery] = useState({ usfuername: '', class: '', gender: '' })
+  const [searchQuery, setSearchQuery] = useState({ username: '', class: '', gender: '',fullName:"" })
   const buttonRef=useRef(null)
 
   useEffect(() => {
@@ -31,13 +31,12 @@ const AllStds = ({state}) => {
     fetchData();
     //eslint-disable-next-line
   }, [arr.length,state])
-
   useEffect(() => {
     let stds = arr.filter((value) => {
       if(searchQuery.class==='')
-      return value.fullName.toLowerCase().includes(searchQuery.fullName.toLocaleLowerCase()) && value.gender.includes(searchQuery.gender)
+      return value.fullName.toLowerCase().includes(searchQuery.fullName.toLowerCase()) && value.gender.includes(searchQuery.gender)
 
-      else return value.fullName.toLowerCase().includes(searchQuery.fullName.toLocaleLowerCase()) && value.class===searchQuery.class && value.gender.includes(searchQuery.gender)
+      else return value.fullName.toLowerCase().includes(searchQuery.fullName.toLowerCase()) && value.class===searchQuery.class && value.gender.includes(searchQuery.gender)
     })
     setStudents(stds)
     return () => {
@@ -78,7 +77,7 @@ const AllStds = ({state}) => {
       <div className="container">
 
       {searchSection && <div className="mt-4 searchCenter position-relative container rounded my-2 d-flex flex-column gap-2 flex-wrap p-4 shadow-lg">
-        <button onClick={() => { setSearchSection(false); setStudents(arr) }} className="position-absolute top-0 start-0 border-none" ref={buttonRef}><i  id='hide-btn' className='hide-btn btn-close ml-2 bg-secondary text-white'></i> </button>Press escape to exit.
+        <button onClick={() => { setSearchSection(false); setStudents(arr) }} className="position-absolute top-0 start-0 border-none" ref={buttonRef}><i  id='hide-btn' className='hide-btn btn-close ml-2 bg-secondary text-white'></i> </button>
         <input type="search" name="fullName" id="fullName" className='p-2 mt-4 d-inline rounded border' placeholder='Search by Username' onChange={handleChange} />
 
         <label htmlFor="class">Sort Students by Class

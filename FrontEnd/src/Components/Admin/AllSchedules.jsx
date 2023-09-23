@@ -6,9 +6,12 @@ import { generalContext } from "../../contexts/generalContext";
 import { UUID } from "uuidjs"; // to provide unique id to each element
 import { AuthContext } from "../../contexts/authContext";
 const AllSchedules = ({ state }) => {
-  let { showAlert, capitallizeFirstLetter } = useContext(generalContext);
+  let { showAlert, capitallizeFirstLetter, classes } =
+    useContext(generalContext);
+  const allClassesNames = classes.map((value) => value.className);
   let { user } = useContext(AuthContext);
   const [schedules, setSchedules] = useState([]);
+  const [filteredSchedules, setFilteredSchedules] = useState([]);
   const location = useLocation();
   useEffect(() => {
     if (location.hash) {
@@ -23,6 +26,7 @@ const AllSchedules = ({ state }) => {
     if (state === "trashed") url = "/schedules/trashed";
     let response = await axios.get(url);
     setSchedules(response.data.schedules);
+    setFilteredSchedules(response.data.schedules);
   };
   useEffect(() => {
     fetchSchedules();
@@ -77,7 +81,7 @@ const AllSchedules = ({ state }) => {
       if (unchecked.length === 1) {
         data.push(
           <Link
-            key={UUID.generate}
+            key={UUID.generate()}
             className="btn btn-warning"
             to={`/${capitallizeFirstLetter(user.status)}/add-marks`}
             state={{ sid, date, subject: unchecked[0] }}
@@ -88,7 +92,7 @@ const AllSchedules = ({ state }) => {
         );
       } else {
         data.push(
-          <div key={UUID.generate} className="dropdown">
+          <div key={UUID.generate()} className="dropdown">
             <button
               className="btn btn-warning dropdown-toggle"
               type="button"
@@ -98,8 +102,8 @@ const AllSchedules = ({ state }) => {
               Add Marks of
             </button>
             <ul className="dropdown-menu">
-              {unchecked.map((value, index) => (
-                <li key={index}>
+              {unchecked.map((value) => (
+                <li key={UUID.generate()}>
                   {
                     <Link
                       className="dropdown-item"
@@ -119,7 +123,7 @@ const AllSchedules = ({ state }) => {
     if (checked.length) {
       if (checked.length === 1) {
         data.push(
-          <div key={UUID.generate}>
+          <div key={UUID.generate()}>
             <Link
               title="View  Marks"
               className="btn btn-info"
@@ -140,7 +144,7 @@ const AllSchedules = ({ state }) => {
         );
       } else {
         data.push(
-          <div key={UUID.generate}>
+          <div key={UUID.generate()}>
             <div className="dropdown">
               <button
                 className="btn btn-info dropdown-toggle"
@@ -163,7 +167,7 @@ const AllSchedules = ({ state }) => {
                   }
                 </li>
                 {checked.map((value, index) => (
-                  <li key={index}>
+                  <li key={UUID.generate()}>
                     {
                       <Link
                         className="dropdown-item"
@@ -191,7 +195,7 @@ const AllSchedules = ({ state }) => {
               </button>
               <ul className="dropdown-menu">
                 {checked.map((value, index) => (
-                  <li key={index}>
+                  <li key={UUID.generate()}>
                     {
                       <Link
                         className="dropdown-item"
@@ -219,20 +223,45 @@ const AllSchedules = ({ state }) => {
     const year = date.getFullYear();
     return `${month}-${day}-${year}`;
   }
+  function handleSearchChange(e) {
+    if (e.target.value === "") {
+      return setFilteredSchedules(schedules);
+    }
+    let _filteredSchedules = schedules.filter(
+      (value) => value.className === e.target.value
+    );
+    setFilteredSchedules(_filteredSchedules);
+  }
   return (
     <div className="container">
+      <div className="d-flex justify-content-between">
         <h1 className="page-heading">
           {capitallizeFirstLetter(state)} Schedules
         </h1>
-      {!schedules || !schedules.length? (
+        <select
+          onChange={handleSearchChange}
+          className="form-select form-select-lg mb-3 stdform-item"
+          aria-label="Large select example"
+          defaultValue={""}
+        >
+          <option value="">All</option>
+          {allClassesNames.map((value, index) => {
+            return (
+              <option key={index + value} value={value}>
+                {value}
+              </option>
+            );
+          })}
+        </select>
+      </div>
+      {!filteredSchedules || !filteredSchedules.length ? (
         <h3 className="text-secondary text-center">No Schedules Found!</h3>
       ) : null}
-
-      {schedules &&
-        schedules.map((fvalue, index) => {
+      {filteredSchedules &&
+        filteredSchedules.map((fvalue, index) => {
           return (
             <div
-              key={index}
+              key={UUID.generate()}
               id={"sid" + fvalue.sid}
               className="my-5 p-3 shadow-lg w-max"
             >
@@ -333,7 +362,7 @@ const AllSchedules = ({ state }) => {
                           {JSON.parse(fvalue.data).map((value, index) => {
                             return (
                               <tr
-                                key={index}
+                                key={UUID.generate()}
                                 className={
                                   formatDate(new Date(value.date)) ===
                                   formatDate(new Date())

@@ -24,7 +24,7 @@ const UserProfiler = () => {
             if(_user.subjects) _user.subjects=JSON.parse(_user.subjects).join(' , ')
 
             if(!state){
-                let {isActive,phoneNumber,address,id,uid,status,dp,...other}=_user
+                let {isActive,phoneNumber,guardianPhoneNumber,studentPhoneNumber,address,id,uid,status,dp,...other}=_user
                 setUserData(other)
                 return
             }

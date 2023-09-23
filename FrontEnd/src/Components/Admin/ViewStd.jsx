@@ -197,6 +197,31 @@ const ViewStd = () => {
                   {moment(new Date(data.joiningDate)).format("DD MMM, YYYY")}
                 </th>
               </tr>
+              <tr>
+                <th>Date of Birth</th>
+                <th>
+                  {moment(new Date(data.dateOfBirth)).format("DD MMM, YYYY")}
+                </th>
+              </tr>
+              <tr>
+                <th>Subjects</th>
+                <th className="p-0">
+                  {JSON.parse(data.subjects).map((value, index) => {
+                    if (index % 4 === 0) {
+                      return <br />;
+                    } else {
+                      return (
+                        <span>
+                          {value}{" "}
+                          {index + 1 === JSON.parse(data.subjects).length
+                            ? ""
+                            : " - "}{" "}
+                        </span>
+                      );
+                    }
+                  })}
+                </th>
+              </tr>
             </thead>
           </table>
         </div>

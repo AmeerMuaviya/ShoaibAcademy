@@ -84,6 +84,7 @@ const StudentsInfo = () => {
                   trailColor: "lightgrey",
                 })}
                 value={stPercentage.malePercentage}
+                //TODO resolve undefined here (reload website's page (techrayz))
                 text={stPercentage.malePercentage + "%"}
               />
             </div>

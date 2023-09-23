@@ -87,7 +87,7 @@ try {
   if (fs.existsSync(file)) {
     res.download(file,req.params.fileName)
   }
-  else res.sendFile(__dirname+`/images/404.jpg`)
+  else res.sendFile(__dirname+`/images/404.png`)
 } catch(err) {
   res.json(err)
 }
@@ -99,7 +99,7 @@ try {
   if (fs.existsSync(file)) {
     res.download(file,req.params.fileName)
   }
-  else res.sendFile(__dirname+`/images/404.jpg`)
+  else res.sendFile(__dirname+`/images/404.png`)
 } catch(err) {
   res.json(err)
 }
@@ -111,7 +111,7 @@ try {
   if (fs.existsSync(file)) {
     res.download(file,req.params.fileName)
   }
-  else res.sendFile(__dirname+`/images/404.jpg`)
+  else res.sendFile(__dirname+`/images/404.png`)
 } catch(err) {
   res.json(err)
 }

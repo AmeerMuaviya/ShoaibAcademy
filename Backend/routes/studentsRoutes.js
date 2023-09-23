@@ -138,6 +138,14 @@ router.get("/all", adminOrTeacher, (req, res) => {
     else res.status(200).json(data); //don't change this
   });
 });
+// Get all students (trashed+active)
+router.get("/all-students", adminOrTeacher, (req, res) => {
+  let q = "SELECT * FROM Students ORDER BY id DESC";
+  db.query(q, (err, data) => {
+    if (err) res.status(200).json({ err: true, msg: err.sqlMessage });
+    else res.status(200).json(data); //don't change this
+  });
+});
 // Get trashed students
 router.get("/trashed", adminOnly, (req, res) => {
   let q = "SELECT * FROM Students WHERE isActive=0";
@@ -239,16 +247,15 @@ router.delete("/moveToTrash/:id", adminOnly, (req, res) => {
 });
 
 // <==================Fee Section Starts===========================>
-//Pay Fee
 router.post("/payfee/", adminOnly, (req, res) => {
   let orgIds = req.body.ids;
+  if(!req.body.month) return res.json({err:true,msg:"Date can't be null."})
   //check if a students paid advance fee
   db.query(
     "SELECT uid from FeeHistory WHERE uid in (?) and month=?",
     [orgIds, req.body.month],
     (err, data) => {
       if (err) return res.json({ err: true, msg: err.sqlMessage });
-      if (err) return res.status(200).json({ err: true, msg: err.sqlMessage });
       let uids = data.map((value) => value.uid); //extract uids of advance paid fees
       let existing = orgIds.filter((value) => uids.includes(value)); //existing records
       if (existing.length) {
@@ -259,8 +266,8 @@ router.post("/payfee/", adminOnly, (req, res) => {
             existing,
             req.body.month,
           ],
-          (err, d) => {
-            if (err) return res.json({ err: true, err: err.sqlMessage });
+          (err) => {
+            if (err) return res.json({ err: true, msg: err.sqlMessage });
             else res.json({ err: false, msg: "Records Updated" });
           }
         );
@@ -289,6 +296,20 @@ router.post("/payfee/", adminOnly, (req, res) => {
   );
   updateFeeStatus();
 });
+router.post('/update-fee/:id',(req,res)=>{
+  db.query('UPDATE FeeHistory SET month=? WHERE id=?',[req.body.month,req.params.id],(err)=>{
+    if(err) return res.json({err:true,msg:err.sqlMessage})
+    updateFeeStatus()
+    res.json({err:false,msg:"Record has been updated successfully."})
+  })
+})
+router.delete('/delete-fee-record/:id',(req,res)=>{
+  db.query('DELETE FROM FeeHistory WHERE id=?',[req.params.id],(err)=>{
+    if(err) return res.json({err:true,msg:err.sqlMessage})
+    updateFeeStatus()
+    res.json({err:false,msg:"Record has been deleted successfully."})
+  })
+})
 //get fee history of particular student
 router.get("/paid-fee-records/:uid", adminOnly, (req, res) => {
   db.query(
@@ -467,9 +488,9 @@ function getAdmissionsPercentageByMonth(students) {
     const MaleCount = admissionsByMonth.Male[name] || 0;
     const totalCount = FemaleCount + MaleCount;
     const Girls =
-      FemaleCount > 0 ? ((FemaleCount / totalCount) * 100).toFixed(0) : 0;
+      FemaleCount > 0 ? Number(((FemaleCount / totalCount) * 100).toFixed(0)) : 0;
     const Boys =
-      MaleCount > 0 ? ((MaleCount / totalCount) * 100).toFixed(0) : 0;
+      MaleCount > 0 ? Number(((MaleCount / totalCount) * 100).toFixed(0)) : 0;
     return { name, Girls, Boys };
   });
   return admissionsPercentageByMonth;
@@ -480,8 +501,8 @@ function getGenderPercentage(students) {
     (student) => student.gender === "Male"
   ).length;
   const femaleStudents = totalStudents - maleStudents;
-  const malePercentage = ((maleStudents / totalStudents) * 100).toFixed(1);
-  const femalePercentage = ((femaleStudents / totalStudents) * 100).toFixed(1);
+  const malePercentage = Number(((maleStudents / totalStudents) * 100).toFixed(1));
+  const femalePercentage = Number(((femaleStudents / totalStudents) * 100).toFixed(1));
   return { malePercentage, femalePercentage };
 }
 
